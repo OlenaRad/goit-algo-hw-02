@@ -1,0 +1,19 @@
+from collections import deque
+
+def is_palindrome(input_string):
+    # Перетворення рядка у нижній регістр і видалення пробілів
+    input_string = input_string.lower().replace(" ", "")
+    
+    # Створення двосторонньої черги
+    char_deque = deque(input_string)
+    
+    # Перевірка, чи є рядок паліндромом
+    while len(char_deque) > 1:
+        # Порівняння символів з обох кінців черги
+        if char_deque.popleft() != char_deque.pop():
+            return False
+    return True
+
+# Приклад використання
+input_str = "A man a plan a canal Panama"
+print(is_palindrome(input_str))  # Виведе True
