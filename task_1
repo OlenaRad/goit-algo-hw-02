@@ -1,0 +1,35 @@
+from queue import Queue
+import time
+
+# Створити чергу заявок
+queue = Queue()
+
+# Функція generate_request():
+def generate_request():
+    # Створити нову заявку (можливо, генерувати ідентифікатори)
+    new_request = "Request" + str(+ 1)
+    # Додати заявку до черги
+    queue.put(new_request)
+
+# Функція process_request():
+def process_request():
+    # Якщо черга не пуста:
+    if not queue.empty():
+        # Видалити заявку з черги
+        request = queue.get()
+        # Обробити заявку (можливо, вивести її номер)
+        print("Processing request:", request)
+    else:
+        # Інакше, якщо черга пуста, вивести повідомлення
+        print("Черга пуста")
+
+# Головний цикл програми:
+if __name__ == "__main__":
+    # Поки користувач не вийде з програми:
+    while True:
+        # Виконати generate_request() для створення нових заявок
+        generate_request()
+        # Виконати process_request() для обробки заявок
+        process_request()
+
+
