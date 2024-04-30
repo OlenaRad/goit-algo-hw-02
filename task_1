@@ -31,5 +31,8 @@ if __name__ == "__main__":
         generate_request()
         # Виконати process_request() для обробки заявок
         process_request()
+    except KeyboardInterrupt:
+        # Якщо користувач натиснув Ctrl+C, вивести повідомлення про вихід
+        print("\nПрограма завершила роботу через вимкнення користувачем.")
 
 
